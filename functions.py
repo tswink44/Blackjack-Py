@@ -52,14 +52,20 @@ def translatehand(hand):
 def calculatehandpoints(hand):
     points = 0
     hasAce = False
+    hasTwoAces = False
     for card in hand:
         if card.cardnum == 1:
-            hasAce = True
+            if hasAce == True:
+                hasTwoAces == True
+            else:
+                hasAce = True
         cardnum = card.cardnum -1
         points += pointslist[cardnum]
     #If a hand has an Ace and busts using 11 points, instead using 1 point
     if hasAce == True and points > 21:
         points = points - 10
+        if points > 21 and hasTwoAces == True:
+            points = points -10
     return points
 #Determines if hand is bust
 def IsBust(points):
