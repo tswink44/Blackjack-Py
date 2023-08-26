@@ -1,3 +1,7 @@
+import random
+from classes import *
+from main import deck,pointslist,suitlist,cardnumlist
+
 def initializeDeck(suitlist,cardlist,decklist):
     for suit in suitlist:
         for card in cardlist:
