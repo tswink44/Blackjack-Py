@@ -52,6 +52,39 @@ while playerpoints <= 21:
             break
         print ("Your new hand is a " + translatehand(playerhand))
         
+#Dealer hand if player did not bust
+playerbust = False
+dealerbust = False
+if IsBust(playerpoints) == True:
+    print("Dealer wins!")
+    playerbust = True
+
+while (dealerpoints < 17) and (playerbust == False) and (dealerpoints < playerpoints) :
+    #If dealer has 17 or more points, stops drawing
+    if dealerpoints >= 17:
+        break
+    randomint = random.randint(0,len(deck)-1)
+    dealerhand.append(deck.pop(randomint))
+    #calculates dealer points
+    dealerpoints = calculatehandpoints(dealerhand)
+    #If bust, announces it
+    if IsBust(dealerpoints) == True:
+        print("Dealer busts, you win!")
+        dealerbust = True
+        break
+    print("Dealer new hand is a " + translatehand(dealerhand))
+print("Final player hand is a" + translatehand(playerhand))
+print("Final dealer hand is " + translatehand(dealerhand))
+if playerbust == True:
+    print("You busted, try again")
+elif playerbust == False and dealerbust == True:
+    print("Dealer bust, you win!")
+elif playerpoints > dealerpoints:
+    print("Your hand beats the dealer, you win!")
+elif dealerpoints > playerpoints:
+    print("Your hand loses to the dealer. You lose")
+else:
+    print("Your hand ties the dealer. It's a draw")
 
 
 

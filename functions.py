@@ -14,9 +14,9 @@ def initializeDeck(suitlist,cardlist,decklist):
 def dealhand(deck):
     hand = []
     randint1 = random.randint(0,len(deck)-1)
-    randint2 = random.randint(0,len(deck)-1)
+    randint2 = random.randint(0,len(deck)-2)
     while randint1 == randint2:
-        randint2 = random.randint(0,len(deck)-1)
+        randint2 = random.randint(0,len(deck)-2)
     hand.append(deck.pop(randint1))
     hand.append(deck.pop(randint2))
     return hand
@@ -46,7 +46,7 @@ def translatehand(hand):
         else:
             transcard.append(cardnum)
     
-    return "Your cards are {cards} of suits {suits}".format(cards = transcard, suits = transuit)
+    return "{cards} of suits {suits}".format(cards = transcard, suits = transuit)
     
 #Calculate points for a hand
 def calculatehandpoints(hand):
