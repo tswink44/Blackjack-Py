@@ -1,5 +1,5 @@
 import random
-from classes import *
+from classes import Card
 from main import deck,pointslist,suitlist,cardnumlist
 
 def initializeDeck(suitlist,cardlist,decklist):

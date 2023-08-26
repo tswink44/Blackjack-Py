@@ -1,6 +1,6 @@
 import random
-from functions import *
-from classes import *
+from functions import initializeDeck,dealhand,translatehand,calculatehandpoints,IsBust
+from classes import Card
 
 #Initializng deck and possible suits and cardnums/points (2,8,J,etc.,)
 deck = []
