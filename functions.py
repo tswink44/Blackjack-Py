@@ -56,7 +56,7 @@ def calculatehandpoints(hand):
     for card in hand:
         if card.cardnum == 1:
             if hasAce == True:
-                hasTwoAces == True
+                hasTwoAces = True
             else:
                 hasAce = True
         cardnum = card.cardnum -1
