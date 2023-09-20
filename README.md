@@ -1,3 +1,3 @@
-# Blackjack-Py
+#Day 10 Blackjack Capstone
 
-Very basic blackjack game I made while re-learning how to code. Nothing special
+100 Days of code. Blackjack game.
